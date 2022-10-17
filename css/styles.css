@@ -449,13 +449,6 @@ nav {
   color: var(--accent-color);
 }
 
-/* .client-item:hover .client-link,
-.client-item:focus .client-link {
-  border: 1px solid #2196f3;
-  border-radius: 4px;
-  color: var(--accent-color);
-} */
-
 .client-icon {
   fill: currentColor;
 }
@@ -512,12 +505,6 @@ nav {
   margin-bottom: 30px;
   width: calc((100% - 60px) / 3);
 }
-
-/* .portfolio-item:hover,
-.portfolio-item:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-} */
 
 .portfolio-link {
   display: block;
@@ -631,7 +618,6 @@ footer {
   color: var(--primary-background-color);
   margin-top: 0;
   margin-bottom: 20px;
-  /* padding-top: 12px; */
 
   font-weight: 700;
   font-size: 14px;
@@ -694,55 +680,9 @@ footer {
   overflow: hidden;
 }
 
-/*Приклад ::before
-
- .feature-list .item::before {
-  content: '';
-  display: block;
-  height: 120px;
-  background-color: #f5f4fa;
-  background-size: 70px 70px;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-bottom: 30px;
-}
-
-.item.icon-antenna::before {
-  background-image: url('../images/antenna.svg');
-}
-
-.item.icon-clock::before {
-  background-image: url('../images/clock.svg');
-}
-
-.item.icon-diagram::before {
-  background-image: url('../images/diagram.svg');
-}
-
-.item.icon-astronaut::before {
-  background-image: url('../images/astronaut.svg');
-} */
-
 .thumb {
   position: relative;
 }
-
-/* .thumb:hover::before {
-  opacity: 1;
-} */
-
-/* .thumb::before {
-  display: inline-block;
-  position: absolute;
-  content: '';
-  width: 100%;
-
-  opacity: 0;
-} */
-
-/* .specialization .thumb {
-;
-} */
 
 .specialization .title {
   position: absolute;
@@ -765,14 +705,8 @@ footer {
   text-align: center;
 }
 
-/* .portfolio-thumb::before {
-  height: 100%;
-  background-color: ;
-} */
-
 .portfolio-item-description {
   position: absolute;
-  /* bottom: 0; */
   top: 0;
   display: inline-block;
   overflow: auto;
@@ -869,6 +803,16 @@ footer {
   fill: var(--accent-color);
 }
 
+
+
+
+
+
+
+
+
+
+
 /* 
 приклад ховера, що перекриває зображення через opacity без transition
 
@@ -879,4 +823,56 @@ footer {
 .portfolio-link:hover .portfolio-item-description,
 .portfolio-link:focus .portfolio-item-description {
   opacity: 1;
+} */
+
+
+/*Приклад ::before
+
+ .feature-list .item::before {
+  content: '';
+  display: block;
+  height: 120px;
+  background-color: #f5f4fa;
+  background-size: 70px 70px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 30px;
+}
+
+.item.icon-antenna::before {
+  background-image: url('../images/antenna.svg');
+}
+
+.item.icon-clock::before {
+  background-image: url('../images/clock.svg');
+}
+
+.item.icon-diagram::before {
+  background-image: url('../images/diagram.svg');
+}
+
+.item.icon-astronaut::before {
+  background-image: url('../images/astronaut.svg');
+} */
+
+/* .thumb:hover::before {
+  opacity: 1;
+} */
+
+/* .thumb::before {
+  display: inline-block;
+  position: absolute;
+  content: '';
+  width: 100%;
+
+  opacity: 0;
+} */
+
+/* .specialization .thumb {
+;
+} */
+
+/* .portfolio-thumb::before {
+  height: 100%;
+  background-color: ;
 } */
