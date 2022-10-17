@@ -120,6 +120,24 @@ nav {
   transition: color var(--transition-dur-and-func);
 }
 
+.link.current {
+  position: relative;
+}
+
+.link.current::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
 .site-nav .link:hover,
 .site-nav .link:focus {
   color: var(--accent-color);
@@ -465,6 +483,7 @@ nav {
   font-size: 16px;
   line-height: 1.6;
   letter-spacing: 0.03em;
+  border-radius: 4px;
 
   cursor: pointer;
 }
@@ -762,43 +781,39 @@ footer {
   font-size: 18px;
   line-height: 1.56;
   letter-spacing: 0.03em;
-
-  /* opacity: 0; */
 }
-
-/* .portfolio-link:hover .portfolio-item-description,
-.portfolio-link:focus .portfolio-item-description {
-  opacity: 1;
-} */
-
-/* .link.current::after {
-text-decoration: underline;
-} */
 
 .portfolio.thumb {
   overflow: hidden;
 }
-
-/* .portfolio-item-description {
-  
-} */
 
 .portfolio-link:hover .portfolio-item-description,
 .portfolio-link:focus .portfolio-item-description {
   transform: translateY(0%);
 }
 
-/* modal */
+/* backdrop */
+
 .backdrop {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 100;
+
   width: 100%;
   height: 100%;
-  /* background-color: var(); - відсутній */
-  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.2); 
+
   transition: opacity var(--transition-dur-and-func), visibility var(--transition-dur-and-func);
 }
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* modal */
 
 .modal {
   position: absolute;
@@ -807,8 +822,11 @@ text-decoration: underline;
   transform: translate(-50%, -50%);
 
   width: 528px;
-  height: 580px;
+  height: 581px;
   background-color: var(--primary-background-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }
 
 .modal-close-btn {
@@ -825,15 +843,34 @@ text-decoration: underline;
   background-color: var(--primary-background-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  /* add info here */
+  transition: border-color var(--transition-dur-and-func);
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  outline: none;
+  border-color: var(--accent-color);
 }
 
 .modal-close-icon {
-  transition: ;
+  transition: fill var(--transition-dur-and-func);
 }
 
-.backdrop.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+.modal-close-btn:hover .modal-close-icon,
+.modal-close-btn:focus .modal-close-icon {
+  fill: var(--accent-color);
 }
+
+/* 
+приклад ховера, що перекриває зображення через opacity без transition
+
+.portfolio-item-description {
+  opacity: 0;
+} 
+
+.portfolio-link:hover .portfolio-item-description,
+.portfolio-link:focus .portfolio-item-description {
+  opacity: 1;
+} */
+
+
