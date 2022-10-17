@@ -13,6 +13,7 @@ html {
   --title-text-color: #212121;
   --accent-color: #2196f3;
   --primary-background-color: #ffffff;
+  --transition-dur-and-func: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -50,6 +51,12 @@ body {
   letter-spacing: 0.03em;
 
   text-decoration: none;
+
+  transition: color var(--transition-dur-and-func);
+}
+
+.logo span {
+  transition: color var(--transition-dur-and-func);
 }
 
 .logo-head {
@@ -109,6 +116,8 @@ nav {
   letter-spacing: 0.02em;
 
   text-decoration: none;
+
+  transition: color var(--transition-dur-and-func);
 }
 
 .site-nav .link:hover,
@@ -139,6 +148,8 @@ nav {
   line-height: 1.14;
   letter-spacing: 0.02em;
   text-decoration: none;
+
+  transition: color var(--transition-dur-and-func);
 }
 
 .envelope-icon,
@@ -200,6 +211,8 @@ nav {
   letter-spacing: 0.06em;
 
   cursor: pointer;
+
+  transition: color var(--transition-dur-and-func), background-color var(--transition-dur-and-func);
 }
 
 .button:hover,
@@ -365,6 +378,8 @@ nav {
   width: 100%;
   height: 100%;
   border-radius: 50%;
+
+  transition: color var(--transition-dur-and-func), background-color var(--transition-dur-and-func);
 }
 
 .social-link-team .icon {
@@ -681,8 +696,6 @@ footer {
   background-image: url('../images/astronaut.svg');
 } */
 
-
-
 .thumb {
   position: relative;
 }
@@ -707,7 +720,7 @@ footer {
 .specialization .title {
   position: absolute;
   top: 0;
- 
+
   width: 100%;
   height: 70px;
   margin: 0;
@@ -732,8 +745,12 @@ footer {
 
 .portfolio-item-description {
   position: absolute;
-  bottom: 0;
+  /* bottom: 0; */
+  top: 0;
   display: inline-block;
+  overflow: auto;
+  transform: translateY(100%);
+  transition: transform var(--transition-dur-and-func);
 
   width: 100%;
   height: 100%;
@@ -746,10 +763,77 @@ footer {
   line-height: 1.56;
   letter-spacing: 0.03em;
 
-  opacity: 0;
+  /* opacity: 0; */
 }
+
+/* .portfolio-link:hover .portfolio-item-description,
+.portfolio-link:focus .portfolio-item-description {
+  opacity: 1;
+} */
+
+/* .link.current::after {
+text-decoration: underline;
+} */
+
+.portfolio.thumb {
+  overflow: hidden;
+}
+
+/* .portfolio-item-description {
+  
+} */
 
 .portfolio-link:hover .portfolio-item-description,
 .portfolio-link:focus .portfolio-item-description {
-  opacity: 1;
+  transform: translateY(0%);
+}
+
+/* modal */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: var(); - відсутній */
+  z-index: 100;
+  transition: opacity var(--transition-dur-and-func), visibility var(--transition-dur-and-func);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 528px;
+  height: 580px;
+  background-color: var(--primary-background-color);
+}
+
+.modal-close-btn {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background-color: var(--primary-background-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  /* add info here */
+}
+
+.modal-close-icon {
+  transition: ;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
